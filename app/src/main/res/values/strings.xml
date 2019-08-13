@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">GameTime</string>
+    <string name="lbl_toque_para_iniciar">Toque para iniciar</string>
+    <string name="lbl_game" translatable="false">Game</string>
+    <string name="lbl_time" translatable="false">Time</string>
 </resources>

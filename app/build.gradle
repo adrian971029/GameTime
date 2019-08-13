@@ -18,6 +18,13 @@ android {
     }
 }
 
+ext {
+    stethoVersion = '1.5.0'
+    butterKnifeVersion = '8.1.0'
+    rxAndroidVersion = '2.1.1'
+    rxJavaVersion = '2.2.7'
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -25,4 +32,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "com.facebook.stetho:stetho:$stethoVersion"
 }
