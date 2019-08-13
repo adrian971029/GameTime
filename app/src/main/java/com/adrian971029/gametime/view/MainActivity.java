@@ -1,6 +1,7 @@
 package com.adrian971029.gametime.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.animation.AlphaAnimation;
@@ -38,6 +39,9 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.ly_telaInicial)
     void onActionTelaInicial() {
+        Intent intent = new Intent(context, SelectionActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     @Override

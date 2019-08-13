@@ -7,4 +7,11 @@
     <string name="lbl_nao">Não</string>
     <string name="lbl_deseja_sair">Tem certeza que deseja sair do aplicativo?</string>
     <string name="lbl_produced_by_AAO">Produced by A.A.O</string>
+    <string name="lbl_desc_bingo">Diviertase e mostre para seus amigos que alem de sorte voce tem talento. Ganhe pontos e prove que voce e o mais sortudo, ups talentoso.</string>
+    <string name="lbl_desc_theJorney">Inicie uma aventura muito intrigante que vai fazer voce expludir sua mente. Vai descobrer um novo mundo cheio de misterios e caminhos desconhecidos.Vora!</string>
+    <string name="lbl_desc_jogoVelha">Joga o clasico jogo da velha para mostrar tuas avilidades. Tenta ganhar do celular no ultimo nivel de dificultade.</string>
+    <string name="lbl_jogar">Jogar</string>
+    <string name="lbl_bingo">Bingo</string>
+    <string name="lbl_theJorney">The Jorney</string>
+    <string name="lbl_jogoVelha">Jogo da Velha</string>
 </resources>
