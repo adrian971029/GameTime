@@ -3,4 +3,8 @@
     <string name="lbl_toque_para_iniciar">Toque para iniciar</string>
     <string name="lbl_game" translatable="false">Game</string>
     <string name="lbl_time" translatable="false">Time</string>
+    <string name="lbl_sim">Sim</string>
+    <string name="lbl_nao">Não</string>
+    <string name="lbl_deseja_sair">Tem certeza que deseja sair do aplicativo?</string>
+    <string name="lbl_produced_by_AAO">Produced by A.A.O</string>
 </resources>
