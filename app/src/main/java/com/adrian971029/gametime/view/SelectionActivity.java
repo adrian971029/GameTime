@@ -10,6 +10,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.adrian971029.gametime.base.BaseFragment;
 import com.adrian971029.gametime.R;
 import com.adrian971029.gametime.adapter.ScreenSlidePagerAdapter;
+import com.adrian971029.gametime.helper.ZoomOutPageTransformer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -34,6 +35,7 @@ public class SelectionActivity extends BaseFragment {
         context = getApplicationContext();
         resources = context.getResources();
 
+        mPager.setPageTransformer(true, new ZoomOutPageTransformer());
         pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), context);
         mPager.setAdapter(pagerAdapter);
 

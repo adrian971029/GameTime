@@ -14,6 +14,9 @@
     <string name="lbl_bingo">Bingo</string>
     <string name="lbl_theJorney">The Jorney</string>
     <string name="lbl_jogoVelha">Jogo da Velha</string>
+    <string name="lbl_home">Home</string>
+    <string name="cd_icone_home">Icone Home</string>
+    <string name="cd_icone_configuracoes">Icone configuracões</string>
 
     <string-array name="game_nome">
         <item>@string/lbl_bingo</item>
