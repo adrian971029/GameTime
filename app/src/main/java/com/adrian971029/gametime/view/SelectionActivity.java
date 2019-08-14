@@ -4,28 +4,26 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.os.Bundle;
 
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
-import com.adrian971029.gametime.BaseActivity;
+import com.adrian971029.gametime.base.BaseFragment;
 import com.adrian971029.gametime.R;
-import com.adrian971029.gametime.adapter.GameAdapter;
-import com.adrian971029.gametime.model.Game;
-
-import java.util.ArrayList;
+import com.adrian971029.gametime.adapter.ScreenSlidePagerAdapter;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class SelectionActivity extends BaseActivity {
+public class SelectionActivity extends BaseFragment {
 
-    @BindView(R.id.rc_gameList)
-    RecyclerView rcGameList;
+    public static final int NUM_PAGES = 3;
+
+    @BindView(R.id.pager)
+    ViewPager mPager;
 
     private Context context;
     private Resources resources;
-    private GameAdapter gameAdapter;
+    private PagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,25 +34,9 @@ public class SelectionActivity extends BaseActivity {
         context = getApplicationContext();
         resources = context.getResources();
 
-        setupRecycler();
-        alimentarGameList();
+        pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), context);
+        mPager.setAdapter(pagerAdapter);
 
-    }
-
-    private void alimentarGameList() {
-        ArrayList<Game> gameList = new ArrayList<>();
-        gameList.add(new Game(resources.getString(R.string.lbl_bingo), resources.getString(R.string.lbl_desc_bingo)));
-        gameList.add(new Game(resources.getString(R.string.lbl_jogoVelha), resources.getString(R.string.lbl_desc_jogoVelha)));
-        gameList.add(new Game(resources.getString(R.string.lbl_theJorney), resources.getString(R.string.lbl_desc_theJorney)));
-        gameAdapter = new GameAdapter(context, gameList);
-        rcGameList.setAdapter(gameAdapter);
-        gameAdapter.notifyDataSetChanged();
-    }
-
-    private void setupRecycler() {
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        rcGameList.setLayoutManager(layoutManager);
-        rcGameList.setItemAnimator(new DefaultItemAnimator());
     }
 
     @Override
