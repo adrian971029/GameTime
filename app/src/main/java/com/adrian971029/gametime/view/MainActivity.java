@@ -4,12 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.adrian971029.gametime.BaseActivity;
+import com.adrian971029.gametime.base.BaseActivity;
 import com.adrian971029.gametime.R;
 
 import butterknife.BindView;
@@ -21,8 +18,8 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.tv_toqueIniciar)
     TextView tvToqueIniciar;
 
-    Context context;
-    Resources resources;
+    private Context context;
+    private Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

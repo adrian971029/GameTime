@@ -8,4 +8,6 @@
     <color name="branco">#FFFFFF</color>
     <color name="preto_claro">#5D4037</color>
     <color name="verde">#009000</color>
+    <color name="dim_gray">#2B2424</color>
+    <color name="vermelhor_vinho">#490E0E</color>
 </resources>
