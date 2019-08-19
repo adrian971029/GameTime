@@ -3,6 +3,7 @@ package com.adrian971029.gametime.base;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -17,6 +18,8 @@ import com.adrian971029.gametime.R;
 import com.google.android.material.button.MaterialButton;
 
 public class BaseFragment extends FragmentActivity {
+
+    private MediaPlayer mediaPlayerButtonPressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,8 @@ public class BaseFragment extends FragmentActivity {
         mDialogNo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayerButtonPressed = MediaPlayer.create(getApplicationContext(), R.raw.button_pressed_sound);
+                mediaPlayerButtonPressed.start();
                 dialog.dismiss();
             }
         });
@@ -47,6 +52,8 @@ public class BaseFragment extends FragmentActivity {
         mDialogOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayerButtonPressed = MediaPlayer.create(getApplicationContext(), R.raw.button_pressed_sound);
+                mediaPlayerButtonPressed.start();
                 finish();
             }
         });
@@ -68,6 +75,8 @@ public class BaseFragment extends FragmentActivity {
         mDialogNo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayerButtonPressed = MediaPlayer.create(getApplicationContext(), R.raw.button_pressed_sound);
+                mediaPlayerButtonPressed.start();
                 dialog.dismiss();
                 animationToqueInicial(textView);
             }
@@ -77,6 +86,8 @@ public class BaseFragment extends FragmentActivity {
         mDialogOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mediaPlayerButtonPressed = MediaPlayer.create(getApplicationContext(), R.raw.button_pressed_sound);
+                mediaPlayerButtonPressed.start();
                 finish();
             }
         });

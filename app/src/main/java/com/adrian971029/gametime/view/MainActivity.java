@@ -3,6 +3,7 @@ package com.adrian971029.gametime.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -20,6 +21,7 @@ public class MainActivity extends BaseActivity {
 
     private Context context;
     private Resources resources;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +32,15 @@ public class MainActivity extends BaseActivity {
         context = getApplicationContext();
         resources = context.getResources();
 
+        mediaPlayer = MediaPlayer.create(context, R.raw.button_pressed_sound);
+
         animationToqueInicial(tvToqueIniciar);
 
     }
 
     @OnClick(R.id.ly_telaInicial)
     void onActionTelaInicial() {
+        mediaPlayer.start();
         Intent intent = new Intent(context, WelcomeActivity.class);
         startActivity(intent);
         finish();

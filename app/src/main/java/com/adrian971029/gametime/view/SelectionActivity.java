@@ -2,6 +2,7 @@ package com.adrian971029.gametime.view;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 
 import androidx.viewpager.widget.PagerAdapter;
@@ -25,6 +26,7 @@ public class SelectionActivity extends BaseFragment {
     private Context context;
     private Resources resources;
     private PagerAdapter pagerAdapter;
+    private MediaPlayer mediaPlayerChangePage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +37,31 @@ public class SelectionActivity extends BaseFragment {
         context = getApplicationContext();
         resources = context.getResources();
 
+        mediaPlayerChangePage = MediaPlayer.create(getApplicationContext(), R.raw.swipe_pager_sound);
+        setupPager();
+
+    }
+
+    private void setupPager() {
         mPager.setPageTransformer(true, new ZoomOutPageTransformer());
         pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager(), context);
-        mPager.setAdapter(pagerAdapter);
+        mPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                mediaPlayerChangePage.start();
+            }
 
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+        mPager.setAdapter(pagerAdapter);
     }
 
     @Override
