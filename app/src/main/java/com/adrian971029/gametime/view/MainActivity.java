@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.ly_telaInicial)
     void onActionTelaInicial() {
-        Intent intent = new Intent(context, SelectionActivity.class);
+        Intent intent = new Intent(context, WelcomeActivity.class);
         startActivity(intent);
         finish();
     }
