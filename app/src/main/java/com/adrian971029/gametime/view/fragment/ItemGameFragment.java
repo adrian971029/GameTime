@@ -1,6 +1,7 @@
 package com.adrian971029.gametime.view.fragment;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
@@ -67,7 +68,11 @@ public class ItemGameFragment extends Fragment {
         desc = getArguments().getString(EXTRA_DESC);
 
         if (title.equals(resources.getString(R.string.lbl_theJorney))) {
-            imgGame.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            if (resources.getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                imgGame.setScaleType(ImageView.ScaleType.FIT_XY);
+            } else {
+                imgGame.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            }
         } else {
             imgGame.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         }
