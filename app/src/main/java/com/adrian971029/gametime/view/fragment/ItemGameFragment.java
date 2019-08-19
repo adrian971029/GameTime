@@ -6,6 +6,8 @@ import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
@@ -22,6 +24,10 @@ import butterknife.ButterKnife;
 
 public class ItemGameFragment extends Fragment {
 
+    public static final String EXTRA_DRAWABLE = "drawable";
+    public static final String EXTRA_TITLE = "title";
+    public static final String EXTRA_DESC = "desc";
+
     @BindView(R.id.img_game)
     ImageView imgGame;
     @BindView(R.id.tv_gameTitle)
@@ -35,10 +41,14 @@ public class ItemGameFragment extends Fragment {
     private String title;
     private String desc;
 
-    public ItemGameFragment(Drawable drawable, String title, String desc) {
-        this.drawable = drawable;
-        this.title = title;
-        this.desc = desc;
+    public static final ItemGameFragment newInstance(int drawableResource, String title, String desc) {
+        Bundle args = new Bundle();
+        args.putInt(EXTRA_DRAWABLE, drawableResource);
+        args.putString(EXTRA_TITLE, title);
+        args.putString(EXTRA_DESC, desc);
+        ItemGameFragment fragment = new ItemGameFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
@@ -52,6 +62,10 @@ public class ItemGameFragment extends Fragment {
         context = getActivity();
         resources = context.getResources();
 
+        drawable = ContextCompat.getDrawable(context,getArguments().getInt(EXTRA_DRAWABLE));
+        title = getArguments().getString(EXTRA_TITLE);
+        desc = getArguments().getString(EXTRA_DESC);
+
         if (title.equals(resources.getString(R.string.lbl_theJorney))) {
             imgGame.setScaleType(ImageView.ScaleType.CENTER_CROP);
         } else {
@@ -63,6 +77,11 @@ public class ItemGameFragment extends Fragment {
         tvGameDesc.setText(desc);
 
         return rootView;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 
 }
