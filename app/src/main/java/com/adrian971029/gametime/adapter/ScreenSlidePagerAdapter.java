@@ -28,13 +28,13 @@ public class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new ItemGameFragment(ContextCompat.getDrawable(context, R.drawable.icone_bingo),nomesList[position], descList[position]);
+                return ItemGameFragment.newInstance(R.drawable.icone_bingo, nomesList[position], descList[position]);
             case 1:
-                return new ItemGameFragment(ContextCompat.getDrawable(context, R.drawable.icone_jogo_da_velha),nomesList[position], descList[position]);
+                return ItemGameFragment.newInstance(R.drawable.icone_jogo_da_velha, nomesList[position], descList[position]);
             case 2:
-                return new ItemGameFragment(ContextCompat.getDrawable(context, R.drawable.icone_the_journey),nomesList[position], descList[position]);
+                return ItemGameFragment.newInstance(R.drawable.icone_the_journey, nomesList[position], descList[position]);
             default:
-                return new ItemGameFragment(ContextCompat.getDrawable(context, R.drawable.icone_bingo),nomesList[position], descList[position]);
+                return ItemGameFragment.newInstance(R.drawable.icone_bingo, nomesList[position], descList[position]);
         }
     }
 

@@ -8,6 +8,26 @@
     <color name="branco">#FFFFFF</color>
     <color name="preto_claro">#5D4037</color>
     <color name="verde">#009000</color>
-    <color name="dim_gray">#2B2424</color>
+    <color name="dim_gray">#505050</color>
     <color name="vermelhor_vinho">#490E0E</color>
+    <color name="transparente">#00FFFFFF</color>
+    <color name="color_ponto_slide_ativo1">#E63D62</color>
+    <color name="color_ponto_slide_ativo2">#9C102C</color>
+    <color name="color_ponto_slide_ativo3">@color/colorAccent</color>
+    <color name="color_ponto_slide_inativo1">#D7E67E96</color>
+    <color name="color_ponto_slide_inativo2">#8A414C</color>
+    <color name="color_ponto_slide_inativo3">#BFCC85</color>
+
+    <array name="array_dot_active">
+        <item>@color/color_ponto_slide_ativo1</item>
+        <item>@color/color_ponto_slide_ativo2</item>
+        <item>@color/color_ponto_slide_ativo3</item>
+    </array>
+
+    <array name="array_ponto_inativo">
+        <item>@color/color_ponto_slide_inativo1</item>
+        <item>@color/color_ponto_slide_inativo2</item>
+        <item>@color/color_ponto_slide_inativo3</item>
+    </array>
+
 </resources>
