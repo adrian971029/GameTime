@@ -11,16 +11,16 @@
 
         <ImageView
             android:id="@+id/img_home"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_16sdp"
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
             android:src="@drawable/icone_home"
             android:contentDescription="@string/cd_icone_home"/>
 
         <TextView
-            android:layout_toEndOf="@id/img_home"
-            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_toStartOf="@id/img_home"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:textColor="@color/branco"
             android:text="@string/lbl_home"
             android:layout_gravity="center"
@@ -28,15 +28,6 @@
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_alignParentEnd="true"
-            android:layout_gravity="center"
-            android:layout_marginEnd="@dimen/_12sdp"
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
-            android:src="@drawable/menu4"
-            android:contentDescription="@string/cd_icone_configuracoes"/>
 
     </RelativeLayout>
 

@@ -19,6 +19,8 @@
     <string name="cd_icone_configuracoes">Icone configuracões</string>
     <string name="lbl_proximo">Proximo</string>
     <string name="lbl_comenzar">Comenzar</string>
+    <string name="open_drawer">Abrir</string>
+    <string name="close_drawer">Fechar</string>
 
     <string-array name="game_nome">
         <item>@string/lbl_bingo</item>
