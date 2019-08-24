@@ -16,9 +16,9 @@
     <string name="lbl_jogoVelha">Jogo da Velha</string>
     <string name="lbl_home">Home</string>
     <string name="cd_icone_home">Icone Home</string>
-    <string name="cd_icone_configuracoes">Icone configuracões</string>
-    <string name="lbl_proximo">Proximo</string>
-    <string name="lbl_comenzar">Comenzar</string>
+    <string name="cd_icone_configuracoes">Icone configurações</string>
+    <string name="lbl_proximo">Próximo</string>
+    <string name="lbl_comenzar">Começar</string>
     <string name="open_drawer">Abrir</string>
     <string name="close_drawer">Fechar</string>
 
