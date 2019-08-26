@@ -37,6 +37,6 @@
         app:itemTextAppearance="@style/Style_TextView"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/menu_nav"
-        app:itemIconTint="@color/colorAccent"/>
+        app:itemIconTint="@color/icones_menu"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>
