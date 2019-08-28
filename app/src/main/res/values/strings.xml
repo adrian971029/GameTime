@@ -21,6 +21,7 @@
     <string name="lbl_comenzar">Começar</string>
     <string name="open_drawer">Abrir</string>
     <string name="close_drawer">Fechar</string>
+    <string name="string_activity_jogo_velha">JOGO DA VELHA</string>
 
     <string-array name="game_nome">
         <item>@string/lbl_bingo</item>

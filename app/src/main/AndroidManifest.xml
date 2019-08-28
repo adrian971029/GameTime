@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.adrian971029.gametime">
 
     <application
@@ -10,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".view.JogoVelhaActivity"></activity>
+        <activity android:name=".view.JogoVelhaActivity"/>
         <activity android:name=".view.WelcomeActivity" />
         <activity android:name=".view.SelectionActivity" />
         <activity
