@@ -1,10 +1,10 @@
 package com.adrian971029.gametime.view.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,11 +17,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.adrian971029.gametime.R;
+import com.adrian971029.gametime.view.JogoVelhaActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ItemGameFragment extends Fragment {
 
@@ -87,6 +90,18 @@ public class ItemGameFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+    }
+
+    @OnClick({R.id.bt_jogar})
+    void onActionBtnJogar(){
+        if (title.equals(resources.getString(R.string.lbl_theJorney))) {
+            Toast.makeText(context, "The Jorney", Toast.LENGTH_SHORT).show();
+        } else if (title.equals(resources.getString(R.string.lbl_jogoVelha))){
+            Intent abrirActivityJogoVelha = new Intent(context, JogoVelhaActivity.class);
+            startActivity(abrirActivityJogoVelha);
+        } else if (title.equals(resources.getString(R.string.lbl_bingo))){
+            Toast.makeText(context, "Bingo", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

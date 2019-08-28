@@ -52,7 +52,7 @@
         tools:text="@string/lbl_desc_theJorney" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/bt_positivo"
+        android:id="@+id/bt_jogar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_20sdp"
