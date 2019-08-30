@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,8 @@ public class ItemGameFragment extends Fragment {
     TextView tvGameTitle;
     @BindView(R.id.tv_gameDesc)
     TextView tvGameDesc;
+    @BindView(R.id.bt_jogar)
+    Button btnJogar;
 
     private Context context;
     private Resources resources;

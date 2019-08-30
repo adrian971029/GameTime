@@ -2,8 +2,9 @@
 <resources>
     <color name="colorPrimary">#F44336</color>
     <color name="colorPrimaryDark">#D32F2F</color>
-    <color name="colorAccent">#FFC107</color>
+    <color name="colorAccent">#FF072C</color>
     <color name="colorPrimaryLigth">#FFCDD2</color>
+    <color name="colorTextoBtnJogoVelha">#CE061B</color>
     <color name="preto">#000000</color>
     <color name="branco">#FFFFFF</color>
     <color name="preto_claro">#5D4037</color>
