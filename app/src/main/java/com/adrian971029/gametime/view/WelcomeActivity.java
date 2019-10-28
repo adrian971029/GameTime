@@ -72,7 +72,7 @@ public class WelcomeActivity extends BaseActivity {
                     // move to next screen
                     viewPager.setCurrentItem(current);
                 } else {
-                    launchHomeScreen();
+                    launchLoginScreen();
                 }
             }
         });
@@ -104,6 +104,12 @@ public class WelcomeActivity extends BaseActivity {
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
         startActivity(new Intent(WelcomeActivity.this, SelectionActivity.class));
+        finish();
+    }
+
+    private void launchLoginScreen() {
+        prefManager.setFirstTimeLaunch(false);
+        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
         finish();
     }
 
