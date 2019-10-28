@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:lineSpacingExtra="@dimen/_4sdp"
-        android:text="Para iniciar cadastrese se você não estiver cadastrado ou faça login na sua conta.Vamos lá jogador!"
+        android:text="Para iniciar faça seu login ou cadastre-se. Vamos lá!"
         android:textAlignment="center"
         android:textColor="@color/branco"
         android:textSize="@dimen/_20sdp"

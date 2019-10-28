@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/preto"
-    tools:context=".view.LoginActivity">
+    tools:context=".view.CadastroActivity">
 
     <include
-        layout="@layout/view_login_title"
+        layout="@layout/view_initial_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -34,10 +34,11 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Usuário:"
+            android:hint="Nome:"
             android:textColorHint="@color/branco">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -48,11 +49,71 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:hint="Sobrenome:"
+            android:textColorHint="@color/branco">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtSobrenome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/branco" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nickname:"
+            android:textColorHint="@color/branco">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtNickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/branco" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email:"
+            android:textColorHint="@color/branco">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/branco" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:hint="Senha:"
             android:textColorHint="@color/branco">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="@color/branco" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirmar senha:"
+            android:textColorHint="@color/branco">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtConfirmarSenha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -63,44 +124,19 @@
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/bt_entrar"
+        android:id="@+id/bt_cadastrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginEnd="@dimen/_16sdp"
         android:fontFamily="@font/base2"
-        android:text="Entrar"
-        android:textColor="@color/branco"
-        app:backgroundTint="@color/colorPrimaryDark"
-        app:cornerRadius="@dimen/_2sdp"
-        app:layout_constraintBottom_toTopOf="@+id/bt_criar_conta"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_chainStyle="spread"
-        app:rippleColor="@color/branco"
-        app:strokeColor="@color/branco"
-        app:strokeWidth="@dimen/_2sdp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/bt_criar_conta"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginEnd="@dimen/_16sdp"
-        android:fontFamily="@font/base2"
-        android:text="Criar Conta"
+        android:text="Cadastrar"
         android:textColor="@color/branco"
         app:backgroundTint="@color/colorPrimaryDark"
         app:cornerRadius="@dimen/_2sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_entrar"
-        app:rippleColor="@color/branco"
-        app:strokeColor="@color/branco"
-        app:strokeWidth="@dimen/_2sdp" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

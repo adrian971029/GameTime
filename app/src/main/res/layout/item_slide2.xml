@@ -10,7 +10,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:lineSpacingExtra="@dimen/_4sdp"
-        android:text="Pode mudar entre um jogo e outro simplemente fazendo scroll para o lado. Puntuamos seu desempenho nos jogos, mais o mais importante e a diversão."
+        android:text="Para navegar entre os jogos arraste para o lado. Pontuamos seu desempenho nos jogos, mas o mais importante é a diversão."
         android:textColor="@color/branco"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"

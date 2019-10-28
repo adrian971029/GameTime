@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_slide">
@@ -10,7 +9,7 @@
         android:id="@+id/tv_toqueIniciar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Bemvindo a GameTime, temos uma coleção de jogos onde garantimos sua diversão."
+        android:text="Bem-vindo ao GameTime, aqui você encontra uma coleção de jogos que irão garantir sua diversão."
         android:textColor="@color/branco"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"

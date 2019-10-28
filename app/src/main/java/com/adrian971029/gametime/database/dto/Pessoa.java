@@ -12,8 +12,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(int id, String nickname, String nome, String sobrenome, String email, String senha) {
-        this.id = id;
+    public Pessoa(String nickname, String nome, String sobrenome, String email, String senha) {
         this.nickname = nickname;
         this.nome = nome;
         this.sobrenome = sobrenome;
