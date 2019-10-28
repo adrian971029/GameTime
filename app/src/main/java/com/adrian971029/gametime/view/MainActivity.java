@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.adrian971029.gametime.base.BaseActivity;
 import com.adrian971029.gametime.R;
+import com.adrian971029.gametime.database.DbConexoes;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,6 +23,7 @@ public class MainActivity extends BaseActivity {
     private Context context;
     private Resources resources;
     private MediaPlayer mediaPlayer;
+    public static DbConexoes dbConexaoSqlite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,24 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected synchronized void onStart() {
+        super.onStart();
+        iniciar();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (dbConexaoSqlite != null) {
+            dbConexaoSqlite.closeDbConexoes();
+        }
+    }
+
+    private synchronized void iniciar() {
+        dbConexaoSqlite = DbConexoes.getInstance();
+    }
+
     @OnClick(R.id.ly_telaInicial)
     void onActionTelaInicial() {
         mediaPlayer.start();
@@ -51,4 +71,5 @@ public class MainActivity extends BaseActivity {
         tvToqueIniciar.clearAnimation();
         createDialogSair(this, resources.getString(R.string.lbl_deseja_sair), tvToqueIniciar);
     }
+
 }
