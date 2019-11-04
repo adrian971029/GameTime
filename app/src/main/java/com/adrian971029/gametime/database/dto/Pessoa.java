@@ -1,6 +1,9 @@
 package com.adrian971029.gametime.database.dto;
 
-public class Pessoa {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Pessoa implements Parcelable {
 
     private int id;
     private String nickname;
@@ -19,6 +22,27 @@ public class Pessoa {
         this.email = email;
         this.senha = senha;
     }
+
+    protected Pessoa(Parcel in) {
+        id = in.readInt();
+        nickname = in.readString();
+        nome = in.readString();
+        sobrenome = in.readString();
+        email = in.readString();
+        senha = in.readString();
+    }
+
+    public static final Creator<Pessoa> CREATOR = new Creator<Pessoa>() {
+        @Override
+        public Pessoa createFromParcel(Parcel in) {
+            return new Pessoa(in);
+        }
+
+        @Override
+        public Pessoa[] newArray(int size) {
+            return new Pessoa[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -80,4 +104,18 @@ public class Pessoa {
                 '}';
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(nickname);
+        dest.writeString(nome);
+        dest.writeString(sobrenome);
+        dest.writeString(email);
+        dest.writeString(senha);
+    }
 }

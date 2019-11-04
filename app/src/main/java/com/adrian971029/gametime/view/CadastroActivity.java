@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.adrian971029.gametime.R;
 import com.adrian971029.gametime.base.BaseActivity;
 import com.adrian971029.gametime.database.dao.PessoaDao;
 import com.adrian971029.gametime.database.dto.Pessoa;
+import com.adrian971029.gametime.helper.Constainst;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -49,7 +51,15 @@ public class CadastroActivity extends BaseActivity {
     @OnClick(R.id.bt_cadastrar)
     void actionBtnCadastrar() {
         getInputValues();
-        cadastrarUsuario();
+        if (isCamposNaoVacios()) {
+            if (isSenhaEqualsConfirmarSenha()) {
+                cadastrarUsuario();
+            } else {
+                edtConfirmarSenha.setError("Senhas não coincidem!");
+            }
+        } else {
+            Toast.makeText(this, "Precisa prencher todos os campos!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void getInputValues() {
@@ -61,11 +71,21 @@ public class CadastroActivity extends BaseActivity {
         confirmarSenha = edtConfirmarSenha.getText().toString();
     }
 
+    private boolean isCamposNaoVacios() {
+        return (!nome.equals("")) && (!sobrenomae.equals("")) && (!nickname.equals("")) &&
+                (!email.equals("")) && (!senha.equals("")) && (!confirmarSenha.equals(""));
+    }
+
+    private boolean isSenhaEqualsConfirmarSenha() {
+        return senha.equals(confirmarSenha);
+    }
+
     private void cadastrarUsuario() {
         pessoa = new Pessoa(nickname, nome, sobrenomae, email, senha);
         pessoaDao = new PessoaDao();
         pessoaDao.inserirPessoa(pessoa);
         Intent intent = new Intent(CadastroActivity.this, SelectionActivity.class);
+        intent.putExtra(Constainst.PESSOA, pessoa);
         startActivity(intent);
     }
 
