@@ -54,10 +54,12 @@ public class LoginActivity extends BaseActivity {
             if (isUsuarioExistente()) {
                 if (isSenhaValida()) {
                     Intent intent = new Intent(this, SelectionActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     intent.putExtra(Constainst.PESSOA, usuario);
                     startActivity(intent);
+                    finish();
                 } else {
-                    edtUsuario.setError("Senha Inválida");
+                    edtSenha.setError("Senha Inválida");
                 }
             } else {
                 edtUsuario.setError("Usuario inexistente");
@@ -69,8 +71,9 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.bt_criar_conta)
     void actionCriarConta() {
-        Intent intent = new Intent(LoginActivity.this, CadastroActivity.class);
+        Intent intent = new Intent(LoginActivity.this, CadastroActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+        finish();
     }
 
     private boolean isCamposNaoVacios() {
@@ -93,7 +96,7 @@ public class LoginActivity extends BaseActivity {
     }
 
     private boolean isSenhaValida() {
-        return usuario.getSenha().equals(Objects.requireNonNull(edtUsuario.getText()).toString());
+        return usuario.getSenha().equals(Objects.requireNonNull(edtSenha.getText()).toString());
     }
 
     class LoginTask extends AsyncTask<String, Integer, String> {

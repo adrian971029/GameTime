@@ -85,8 +85,10 @@ public class CadastroActivity extends BaseActivity {
         pessoaDao = new PessoaDao();
         pessoaDao.inserirPessoa(pessoa);
         Intent intent = new Intent(CadastroActivity.this, SelectionActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.putExtra(Constainst.PESSOA, pessoa);
         startActivity(intent);
+        finish();
     }
 
 }

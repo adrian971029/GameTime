@@ -1,6 +1,8 @@
 package com.adrian971029.gametime.view;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Html;
@@ -16,6 +18,7 @@ import androidx.viewpager.widget.ViewPager;
 import com.adrian971029.gametime.R;
 import com.adrian971029.gametime.adapter.MyViewPagerAdapter;
 import com.adrian971029.gametime.base.BaseActivity;
+import com.adrian971029.gametime.helper.Constainst;
 import com.adrian971029.gametime.helper.PrefManager;
 
 import butterknife.BindView;
@@ -34,15 +37,20 @@ public class WelcomeActivity extends BaseActivity {
     private TextView[] dots;
     private int[] layouts;
     private PrefManager prefManager;
+    private SharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         prefManager = new PrefManager(this);
+        preferences = getSharedPreferences(Constainst.GERAL_PREFERENCES, Context.MODE_PRIVATE);
         if (!prefManager.isFirstTimeLaunch()) {
-            launchHomeScreen();
-            finish();
+            if (preferences.getString(Constainst.PESSOA_INFO, "").equals("")) {
+                launchLoginScreen();
+            } else {
+                launchHomeScreen();
+            }
         }
 
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
@@ -103,13 +111,13 @@ public class WelcomeActivity extends BaseActivity {
 
     private void launchHomeScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, SelectionActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, SelectionActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         finish();
     }
 
     private void launchLoginScreen() {
         prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
+        startActivity(new Intent(WelcomeActivity.this, LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         finish();
     }
 
