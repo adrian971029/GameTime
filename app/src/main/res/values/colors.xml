@@ -19,6 +19,7 @@
     <color name="color_ponto_slide_inativo2">#8A414C</color>
     <color name="color_ponto_slide_inativo3">#BFCC85</color>
     <color name="icones_menu">#E66071</color>
+    <color name="amber">#FFC107</color>
 
     <array name="array_dot_active">
         <item>@color/color_ponto_slide_ativo1</item>

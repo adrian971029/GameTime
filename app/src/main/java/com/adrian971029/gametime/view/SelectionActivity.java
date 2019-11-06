@@ -135,6 +135,7 @@ public class SelectionActivity extends BaseFragment implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.nav_item_one:
+                launchProfileScreen();
                 break;
             case R.id.nav_item_two:
                 break;
@@ -186,6 +187,12 @@ public class SelectionActivity extends BaseFragment implements NavigationView.On
     private void launchLoginScreen() {
         startActivity(new Intent(this, LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
         finish();
+    }
+
+    private void launchProfileScreen() {
+        Intent intent = new Intent(this, ProfileActivity.class);
+        intent.putExtra(Constainst.PESSOA, pessoa);
+        startActivity(intent);
     }
 
 }
